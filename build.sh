@@ -10,14 +10,14 @@ repo init --depth 1 -u https://github.com/LineageOS/android.git -b lineage-20.0 
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init --depth 1 -u https://github.com/sounddrill31/plros_manifests.git -b lineage-20.0 --git-lfs && \
+# repo init --depth 1 -u https://github.com/sounddrill31/plros_manifests.git -b lineage-20.0 --git-lfs && \
 # Clone local_manifests repository
-git clone https://github.com/sounddrill31/local_manifests --depth 1 -b lineage-oxygen .repo/local_manifests && \
+git clone https://github.com/igniteinm/local_manifest --depth 1 -b van .repo/local_manifests && \
 # Sync the repositories
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \ 
 # Clone Cromite app
-rm -rf vendor/plros/prebuilt/apps/Cromite;
-git clone https://gitlab.com/plros-lab/android_packages_apps_Cromite.git vendor/plros/prebuilt/apps/Cromite && \
+# rm -rf vendor/plros/prebuilt/apps/Cromite;
+# git clone https://gitlab.com/plros-lab/android_packages_apps_Cromite.git vendor/plros/prebuilt/apps/Cromite && \
 # Apply microG patch to frameworks/base
 #cd frameworks/base && \
 #git restore .  && \
@@ -33,7 +33,7 @@ git clone https://gitlab.com/plros-lab/android_packages_apps_Cromite.git vendor/
 # Set up build environment
 source build/envsetup.sh && \
 # Lunch configuration
-lunch lineage_oxygen-userdebug && \
+lunch lineage_beryllium-user && \
 # Build the ROM
 mka bacon && \
 echo "Date and time:" && \
