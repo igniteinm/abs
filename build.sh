@@ -4,7 +4,7 @@ repo init --depth 1 -u https://github.com/LineageOS/android.git -b lineage-20.0 
 # Clone local_manifests repository
 git clone https://github.com/igniteinm/local_manifest --depth 1 -b van .repo/local_manifests && 
 # Sync the repositories
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \ 
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags &&
 
 # Clone Cromite app
 #rm -rf vendor/plros/prebuilt/apps/Cromite
