@@ -23,7 +23,7 @@ mka bacon
 #sha256sum out/target/product/*/*.zip
 
 # Pull generated zip files
-crave pull out/target/product/*/*.zip 
+#crave pull out/target/product/*/*.zip 
 
 # Pull generated img files
 # crave pull out/target/product/*/*.img
