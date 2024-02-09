@@ -1,26 +1,26 @@
 rm -rf .repo/local_manifests && 
 # Initialize repo with specified manifest
-repo init --depth 1 -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs && 
+repo init --depth 1 -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
 # Clone local_manifests repository
-git clone https://github.com/igniteinm/local_manifest --depth 1 -b van .repo/local_manifests && 
+git clone https://github.com/igniteinm/local_manifest --depth 1 -b van .repo/local_manifests
 # Sync the repositories
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags &&
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # Clone Cromite app
 #rm -rf vendor/plros/prebuilt/apps/Cromite
 
 #git clone https://gitlab.com/plros-lab/android_packages_apps_Cromite.git vendor/plros/prebuilt/apps/Cromite && 
 # Set up build environment
-source build/envsetup.sh && 
+source build/envsetup.sh
 # Lunch configuration
-lunch lineage_beryllium-user && 
+lunch lineage_beryllium-user
 # Build the ROM
-mka bacon && echo Date and time: && 
+mka bacon
 # Print out/build_date.txt
-cat out/build_date.txt
- echo 
+# cat out/build_date.txt
+ #echo 
 # Print SHA256
-sha256sum out/target/product/*/*.zip
+#sha256sum out/target/product/*/*.zip
 
 # Pull generated zip files
 crave pull out/target/product/*/*.zip 
