@@ -1,4 +1,4 @@
-rm -rf .repo/local_manifests && 
+rm -rf .repo/local_manifests
 # Initialize repo with specified manifest
 repo init --depth 1 -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
 # Clone local_manifests repository
